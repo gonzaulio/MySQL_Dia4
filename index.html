@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba API Y BBDD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+    <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+        <div class="col-md-7 px-0">
+          <h1 class="display-4 fst-italic">Consulta de Base de Datos</h1>
+          <p class="lead my-3">Utilizando los botones de abajo, consulta, agrega, edita o elimina elementos de la base de datos.</p>
+        </div>
+      </div>
+
+
+      
+      
+<!-- INICIO DE LA COLUMNA IZQUIERDA -->
+
+    <div class="container">
+        <div class="row">
+          <div class="col" style="border: solid; border-color: rgba(128, 128, 128, 0.503); border-radius: 20px; margin-top: 10px; margin-right: 10px; ">
+          <form id="myForm">
+          <fieldset>
+              <h2 style="margin: 10px; text-align: center; margin-bottom: 20px;">Agrega a un Alumno:</h2>
+              
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" placeholder= "Maria" id="nombre" >
+              </div>
+              <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido:</label>
+                <input type="text" class="form-control" placeholder= "Martínez" id="apellidos" >
+              </div>
+              <div class="mb-3">
+                <label for="modalidad" class="form-label">Modalidad:</label>
+                <p>1-Presencial, 2-Online, 3-Semi-presencial</p>
+                <input type="number" class="form-control" placeholder= "1" id="modalidad">
+              </div>
+              <div class="mb-3">
+                <label for="anoingreso" class="form-label">Año de Ingreso:</label>
+                <input type="number" class="form-control" placeholder= "2021" id="anoingreso">
+              </div>  
+  
+             
+              <button type="button" class="btn btn-primary" style="margin-bottom: 10px; margin-top: 5px;" id="buttonpostProfesional" onclick="agregarAlumno()">Agregar Alumno</button>
+              <button type="button" class="btn btn-primary" style="margin-bottom: 10px; margin-top: 5px;" disabled="true" id="buttonputprofesional" onclick="editarAlumno()">Editar Alumno</button>
+  
+          </fieldset>
+      </form>
+          </div>
+          <!-- FIN COLUMNA DE LA IZQUIERDA -->
+  
+          <!-- INICIO COLUMNA DEL CENTRO -->
+          <div class="col" style="border: solid; border-color: rgba(128, 128, 128, 0.503); border-radius: 20px; margin-top: 10px;">
+            <h2 style="margin: 10px; text-align: center; margin-bottom: 20px;">Consulta a los alumnos</h2>
+            <h6>¿Algún índice en específico?</h6>
+            <input type="number" class="form-control" id="id" style="width: 50%;">
+            <button type="button" class="btn btn-primary" style="margin: 5px;" onclick="getAlumno()">Mostrar</button>
+  
+          </div>
+          <!-- FIN COLUMNA DEL CENTRO -->
+  
+  
+          <!-- INICIO COLUMNA DE LA DERECHA -->
+          <div class="col" style="border: solid; border-color: rgba(128, 128, 128, 0.503); border-radius: 20px; margin-top: 10px; margin-left: 10px;">
+              <h2 style="margin: 10px; text-align: center; margin-bottom: 20px;">Tu búsqueda:</h2>
+                  <div class="list-group" id="columnaderecha">
+                    
+                    <!-- <button type="button" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="botondemostrar">Aquí va el nombre del profesional</button>
+                                    <div class="collapse" id="collapseExample">
+                                        <div class="card card-body">
+                                          
+                                              <div id="cartademostrar">
+                                                Aquí va el contenido del profesional
+                                              </div>
+                            
+                                              <div id="contenedorbotones"> 
+                                              </div>
+                    
+                                        </div>
+                                    </div> -->
+                  </div>
+          </div>
+
+
+
+
+
+
+
+
+    <script src="/apirest.js"></script>
+    <script src="/funciones.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
